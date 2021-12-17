@@ -1,0 +1,42 @@
+{
+  "name": "yet-another-axie-discord-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Michael",
+  "license": "MIT",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev src/index.ts",
+    "build": "tsc",
+    "lint": "eslint src",
+    "force-resolution": "npx npm-force-resolutions",
+    "clean": "npx rimraf ./**/node_modules"
+  },
+  "dependencies": {
+    "@google-cloud/firestore": "^4.15.1",
+    "@google-cloud/pubsub": "^2.18.4",
+    "axios": "^0.24.0",
+    "discord.js": "^13.3.1",
+    "dotenv": "^10.0.0",
+    "easyqrcodejs-nodejs": "github:m1chaeldg/EasyQRCodeJS-NodeJS",
+    "googleapis": "^91.0.0",
+    "web3": "^1.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.1",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.4"
+  },
+  "engines": {
+    "node": ">=16.0"
+  },
+  "resolutions": {
+    "json-schema": "0.4.0"
+  }
+}

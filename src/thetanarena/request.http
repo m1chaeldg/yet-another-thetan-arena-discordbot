@@ -1,0 +1,204 @@
+### 01 - request send code
+POST https://auth.thetanarena.com/auth/v1/sendCode HTTP/1.1
+Host: auth.thetanarena.com
+User-Agent: UnityPlayer/2019.4.31f1 (UnityWebRequest/1.0, libcurl/7.75.0-DEV)
+Accept: */*
+Accept-Encoding: deflate, gzip
+Content-Type: application/json
+X-Unity-Version: 2019.4.31f1
+Content-Length: 74
+
+{"email":"","createAccount":false,"fromUnity":true}
+
+### response of sendcode
+HTTP/1.1 200 OK
+Date: Sun, 12 Dec 2021 09:00:02 GMT
+Content-Type: application/json
+Content-Length: 16
+Connection: keep-alive
+CF-Cache-Status: DYNAMIC
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s="}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 6bc5c2927939185d-EWR
+
+{"success":true}
+
+### 02 - loginAccount
+POST https://auth.thetanarena.com/auth/v1/loginAccount HTTP/1.1
+Host: auth.thetanarena.com
+User-Agent: UnityPlayer/2019.4.31f1 (UnityWebRequest/1.0, libcurl/7.75.0-DEV)
+Accept: */*
+Accept-Encoding: deflate, gzip
+Content-Type: application/json
+X-Unity-Version: 2019.4.31f1
+Content-Length: 103
+
+{"email":"","code":856131,"deviceId":""}
+
+### response of loginaccount
+HTTP/1.1 200 OK
+Date: Sun, 12 Dec 2021 09:09:14 GMT
+Content-Type: application/json
+Connection: keep-alive
+CF-Cache-Status: DYNAMIC
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s="}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 6bc5d00dad05e849-EWR
+Content-Length: 694
+
+{"success":true,"data":{"accessToken":"","refreshToken":""}}
+
+
+
+### 03 - loginToken
+GET https://auth.thetanarena.com/auth/v1/loginToken HTTP/1.1
+Host: auth.thetanarena.com
+User-Agent: UnityPlayer/2019.4.31f1 (UnityWebRequest/1.0, libcurl/7.75.0-DEV)
+Accept: */*
+Accept-Encoding: deflate, gzip
+Authorization: Bearer 
+X-Unity-Version: 2019.4.31f1
+
+### response of loginToken
+HTTP/1.1 200 OK
+Date: Sun, 12 Dec 2021 09:09:15 GMT
+Content-Type: application/json
+Content-Length: 16
+Connection: keep-alive
+CF-Cache-Status: DYNAMIC
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s="}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: EWR
+
+{"success":true}
+
+#### check version
+GET https://data.thetanarena.com/thetan/v1/ingame/checkVersion?v=10 HTTP/1.1
+Host: data.thetanarena.com
+User-Agent: UnityPlayer/2019.4.31f1 (UnityWebRequest/1.0, libcurl/7.75.0-DEV)
+Accept: */*
+Accept-Encoding: deflate, gzip
+Authorization: Bearer 
+X-Unity-Version: 2019.4.31f1
+
+### response of checkVersion
+HTTP/1.1 200 OK
+Date: Sun, 12 Dec 2021 09:09:16 GMT
+Content-Type: application/json
+Connection: keep-alive
+CF-Cache-Status: DYNAMIC
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s="}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 6bc5d01a9e7517a5-EWR
+Content-Length: 103
+
+{"success":true,"data":{"isMaintainceServer":false,"ticketBanFindMatch":{"numBans":0,"expiredTime":0}}}
+
+### commonConfigs
+GET https://data.thetanarena.com/thetan/v1/ingame/commonConfigs?v=-1 HTTP/1.1
+Host: data.thetanarena.com
+User-Agent: UnityPlayer/2019.4.31f1 (UnityWebRequest/1.0, libcurl/7.75.0-DEV)
+Accept: */*
+Accept-Encoding: deflate, gzip
+Authorization: Bearer 
+X-Unity-Version: 2019.4.31f1
+
+### response of commonConfigs
+HTTP/1.1 200 OK
+Date: Sun, 12 Dec 2021 09:09:17 GMT
+Content-Type: application/json
+Connection: keep-alive
+CF-Cache-Status: DYNAMIC
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s="}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 6bc5d01c884217a5-EWR
+Content-Length: 1150
+
+{"success":true,"data":{"version":9,"coefTrophyClass":2,"teamModeReward":{"trophyPerPlayer":3,"totalPlayer":8,"drawPer":0.3,"losePer":0.15,"powerPointReward":{"-1":0,"0":1,"1":3},"thetanCoinReward":{"-1":1,"0":2,"1":6},"expReward":{"-1":1,"0":2,"1":6}},"battleRoyaleReward":{"mode":{"be12":{"trophyPerPlayer":3,"totalPlayer":12},"be12dual":{"trophyPerPlayer":6,"totalPlayer":6},"br42":{"trophyPerPlayer":1,"totalPlayer":42}},"trophyPer":0,"powerPointPer":0,"thetaCoinPer":0,"seasonPointPer":0},"trophyNeedToClassUp":[0,220,262,322,410,544,744,1085,1673,2740],"vivoxConfig":{"canUseVoice":true,"uri":"https://mt2p.www.vivox.com/api2","domain":"mt2p.vivox.com","issuer":"wolffu1130-th52","tokenKey":""},"regions":[0,1,2,3,5,6,7,8,9,10,11,12,13],"ping":{"greenPingAccept":"100","yellowPingAccept":"170"},"timeoutMatching":500,"offlineBattleCount":2,"maxRef":300,"rewardRef":3,"enableUpgradeWithExchangeRate":true,"voiceChatBattleCount":15,"dynamicLinkDomainURL":"https://thetanarena.page.link","serverCustomInfo":{"ip":"","port":28101,"ipMatching":"","ipLeaderboard":""}}}
+
+#### profile
+GET https://data.thetanarena.com/thetan/v1/profile HTTP/1.1
+Host: data.thetanarena.com
+User-Agent: UnityPlayer/2019.4.31f1 (UnityWebRequest/1.0, libcurl/7.75.0-DEV)
+Accept: */*
+Accept-Encoding: deflate, gzip
+Authorization: Bearer 
+X-Unity-Version: 2019.4.31f1
+
+### response of profile
+HTTP/1.1 200 OK
+Date: Sun, 12 Dec 2021 09:09:17 GMT
+Content-Type: application/json
+Connection: keep-alive
+CF-Cache-Status: DYNAMIC
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s="}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 6bc5d01d5fe517bd-EWR
+Content-Length: 631
+
+{"success":true,"data":{"id":"","created":"2021-12-12T01:25:23.69Z","lastModified":"2021-12-12T01:25:57.648Z","role":0,"version":1,"email":"","username":"","numChangeName":1,"status":1,"address":"","canClaimFreeHero":false,"canClaimBetaReward":false,"userProfile":{"level":0,"xp":0,"levelUpGPP":0},"playerStatistic":{"battle":0,"victory":0,"streak":0,"triple":0,"mega":0,"mvp":0,"hero":0,"behaviorPoint":100},"country":"US","avatarId":1,"frameId":0,"referral":{"numInviteFriends":0,"totalNumInviteFriends":0,"referralID":"","acceptAt":0,"status":false},"isCreator":false}}
+
+### add friend
+POST https://data.thetanarena.com/thetan/v1/friends HTTP/1.1
+Host: data.thetanarena.com
+User-Agent: UnityPlayer/2019.4.31f1 (UnityWebRequest/1.0, libcurl/7.75.0-DEV)
+Accept: */*
+Accept-Encoding: deflate, gzip
+Authorization: Bearer 
+Content-Type: application/json
+X-Unity-Version: 2019.4.31f1
+Content-Length: 39
+
+{"friendId":"61913927a35882a05d6bf52d"}
+
+### response of add friend
+HTTP/1.1 500 Internal Server Error
+Date: Sun, 12 Dec 2021 09:24:22 GMT
+Content-Type: application/json
+Content-Length: 128
+Connection: keep-alive
+CF-Cache-Status: DYNAMIC
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s="}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 6bc5e6393c5218b1-EWR
+
+{"success":false,"code":3103,"status":"OTHER_FULL_REQUEST_RECEIVED","message":"Your friend can't take any more friend requests"}
+
+### get profile 2
+GET https://data.thetanarena.com/thetan/v1/profile/another?userId=61913927a35882a05d6bf52d&withRanking=True HTTP/1.1
+Host: data.thetanarena.com
+User-Agent: UnityPlayer/2019.4.31f1 (UnityWebRequest/1.0, libcurl/7.75.0-DEV)
+Accept: */*
+Accept-Encoding: deflate, gzip
+Authorization: Bearer 
+X-Unity-Version: 2019.4.31f1
+
+
+### response of get profile 2
+HTTP/1.1 200 OK
+Date: Sun, 12 Dec 2021 09:23:27 GMT
+Content-Type: application/json
+Connection: keep-alive
+CF-Cache-Status: DYNAMIC
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s="}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: EWR
+Content-Length: 740
+
+{"success":true,"data":{"id":"","created":"2021-11-14T16:28:23.144Z","lastModified":"2021-12-12T09:20:44.624Z","role":0,"version":1,"email":"","username":"KR-CantaFola","numChangeName":0,"status":1,"address":"0x3afa0314a9c8748b64ed93ee6b413a5797ed9aef","canClaimFreeHero":false,"canClaimBetaReward":false,"userProfile":{"level":15,"xp":636,"levelUpGPP":0},"playerStatistic":{"battle":1450,"victory":887,"streak":23,"triple":257,"mega":35,"mvp":319,"hero":63,"behaviorPoint":0},"country":"KR","avatarId":2,"frameId":0,"referral":{"numInviteFriends":0,"totalNumInviteFriends":0,"referralID":"","acceptAt":0,"status":false},"isCreator":false,"trophy":8730,"trophyHighest":8730,"rankingLevel":4,"rankingLevelHighest":4}}
