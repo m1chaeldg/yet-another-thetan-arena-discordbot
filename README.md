@@ -8,10 +8,10 @@ Here are some example snippets to help you get started creating a container.
 
 ```yaml
 ---
-version: "2.1"
+version: '2.1'
 services:
   wireguard:
-    image: ghcr.io/m1chaeldg/yet-another-axie-discordbot:main
+    image: ghcr.io/m1chaeldg/yet-another-thetan-arena-discordbot:main
     container_name: yaadb
     environment:
       - DISCORD_BOT_TOKEN="discord token"
@@ -31,5 +31,5 @@ docker run -d \
   -e GOOGLE_PRIVATE_KEY="foo" \
   -e ISKO_SPREADSHEET_ID=foo \
   --restart always \
-  ghcr.io/m1chaeldg/yet-another-axie-discordbot:main
+  ghcr.io/m1chaeldg/yet-another-thetan-arena-discordbot:main
 ```
