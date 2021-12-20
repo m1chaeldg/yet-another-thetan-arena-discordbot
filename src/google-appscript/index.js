@@ -1,5 +1,6 @@
 function sendEmailsToDiscordMain() {
   sendEmailsToDiscord();
+  deleteTrigger();
   createTriggerAfter30Sec();
 }
 
